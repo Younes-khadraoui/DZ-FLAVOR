@@ -1,3 +1,4 @@
+import { SearchIcon } from "lucide-react";
 import { Input } from "../ui/input";
 import {
   Select,
@@ -21,6 +22,9 @@ const Search = () => {
         </SelectContent>
       </Select>
       <Input />
+      <div className="bg-input rounded-r-xl pr-2 pl-1">
+        <SearchIcon className="h-full" />
+      </div>
     </div>
   );
 };
