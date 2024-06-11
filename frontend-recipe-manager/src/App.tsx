@@ -8,17 +8,33 @@ import Suggestions from "./components/suggestions/Suggestions";
 import Recipes from "./components/recipes/Recipes";
 import Dashboard from "./components/dashboard/Dashboard";
 import Home from "./components/home/Home";
+import HeaderSearch from "./components/header/HeaderSearch";
 
 function App() {
   return (
     <Router>
       <div>
-        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <div>
+                <Header />
+                <Home />
+              </div>
+            }
+          />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/recipes" element={<Recipes />} />
+          <Route
+            path="/recipes"
+            element={
+              <div>
+                <HeaderSearch />
+                <Recipes />
+              </div>
+            }
+          />
           <Route path="/suggestions" element={<Suggestions />} />
           <Route
             path="/account"
@@ -34,7 +50,17 @@ function App() {
           />
           <Route
             path="/dashboard"
-            element={<ProtectedRoute adminOnly element={<Dashboard />} />}
+            element={
+              <ProtectedRoute
+                adminOnly
+                element={
+                  <div>
+                    <HeaderSearch />
+                    <Dashboard />
+                  </div>
+                }
+              />
+            }
           />
         </Routes>
       </div>

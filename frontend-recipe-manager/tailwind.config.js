@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        light: "#f4f2f0",
+      },
       container: {
         center: true,
         padding: "2rem",

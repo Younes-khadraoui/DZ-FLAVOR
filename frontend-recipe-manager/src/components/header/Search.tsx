@@ -10,7 +10,7 @@ import {
 
 const Search = () => {
   return (
-    <div className="flex">
+    <div className="flex z-10">
       <Select>
         <SelectTrigger className="w-[180px] p-3 bg-input">
           <SelectValue placeholder="Categories" />
