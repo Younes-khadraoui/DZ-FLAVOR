@@ -1,5 +1,0 @@
-const Showcase = () => {
-  return <div className="h-screen"></div>;
-};
-
-export default Showcase;

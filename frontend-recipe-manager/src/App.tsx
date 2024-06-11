@@ -10,6 +10,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Home from "./components/home/Home";
 import HeaderSearch from "./components/header/HeaderSearch";
 import RecipeDetails from "./components/recipes/RecipeDetails";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <>
                 <Header />
                 <Home />
+                <Footer />
               </>
             }
           />
