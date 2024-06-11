@@ -9,6 +9,7 @@ import Recipes from "./components/recipes/Recipes";
 import Dashboard from "./components/dashboard/Dashboard";
 import Home from "./components/home/Home";
 import HeaderSearch from "./components/header/HeaderSearch";
+import RecipeDetails from "./components/recipes/RecipeDetails";
 
 function App() {
   return (
@@ -18,10 +19,10 @@ function App() {
           <Route
             path="/"
             element={
-              <div>
+              <>
                 <Header />
                 <Home />
-              </div>
+              </>
             }
           />
           <Route path="/signup" element={<Signup />} />
@@ -29,13 +30,21 @@ function App() {
           <Route
             path="/recipes"
             element={
-              <div>
+              <>
                 <HeaderSearch />
                 <Recipes />
-              </div>
+              </>
             }
           />
-          <Route path="/suggestions" element={<Suggestions />} />
+          <Route
+            path="/suggestions"
+            element={
+              <>
+                <Header />
+                <Suggestions />
+              </>
+            }
+          />
           <Route
             path="/account"
             element={<ProtectedRoute element={<Account />} />}
@@ -54,12 +63,21 @@ function App() {
               <ProtectedRoute
                 adminOnly
                 element={
-                  <div>
+                  <>
                     <HeaderSearch />
                     <Dashboard />
-                  </div>
+                  </>
                 }
               />
+            }
+          />
+          <Route
+            path="/recipe/:id"
+            element={
+              <div>
+                <Header />
+                <RecipeDetails />
+              </div>
             }
           />
         </Routes>
