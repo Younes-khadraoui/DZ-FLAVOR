@@ -11,6 +11,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import axios from "axios";
 
 const formSchema = z.object({
   recipeName: z.string().min(2, {
@@ -30,8 +31,16 @@ const Suggestions = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const newRecipe = {
+        name: values.recipeName,
+        image: values.recipeImage,
+      };
+      await axios.post("http://localhost:5000/api/suggestions", newRecipe);
+    } catch (err) {
+      console.log("Error creating suggestion");
+    }
   }
 
   return (

@@ -73,4 +73,23 @@ router.delete("/:id", async (req: Request, res: Response) => {
   }
 });
 
+router.post("/suggestions", async (req: Request, res: Response) => {
+  try {
+    const { image, name, ingredients, instructions, tags, categories } =
+      req.body;
+    const newRecipe = new Recipe({
+      image,
+      name,
+      ingredients,
+      instructions,
+      tags,
+      categories,
+    });
+    await newRecipe.save();
+    res.status(201).json(newRecipe);
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
 export { router as recipeRoutes };

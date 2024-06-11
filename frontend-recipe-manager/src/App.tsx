@@ -47,15 +47,42 @@ function App() {
           />
           <Route
             path="/account"
-            element={<ProtectedRoute element={<Account />} />}
+            element={
+              <ProtectedRoute
+                element={
+                  <div>
+                    <Header />
+                    <Account />
+                  </div>
+                }
+              />
+            }
           />
           <Route
             path="/favourites"
-            element={<ProtectedRoute element={<Account />} />}
+            element={
+              <ProtectedRoute
+                element={
+                  <div>
+                    <Header />
+                    <Account />
+                  </div>
+                }
+              />
+            }
           />
           <Route
             path="/purchases"
-            element={<ProtectedRoute element={<Account />} />}
+            element={
+              <ProtectedRoute
+                element={
+                  <div>
+                    <Header />
+                    <Account />
+                  </div>
+                }
+              />
+            }
           />
           <Route
             path="/dashboard"

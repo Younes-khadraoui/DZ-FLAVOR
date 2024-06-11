@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { authRoutes } from "./routes/authRoutes";
 import { recipeRoutes } from "./routes/recipeRoutes";
 import { categoryRoutes } from "./routes/categoryRoutes";
+import { suggestionsRoutes } from "./routes/suggestionsRoutes";
 import { User } from "./models/userModel";
 
 const cors = require("cors");
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/recipes", recipeRoutes);
 app.use("/api/categories", categoryRoutes);
+app.use("/api/suggestions", suggestionsRoutes);
 
 mongoose
   .connect(process.env.MONGODB_URI as string)
