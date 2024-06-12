@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Heart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Recipe } from "@/types/recipe";
+import axios from "axios";
 
 const Recipes = () => {
   const navigate = useNavigate();
@@ -24,11 +24,19 @@ const Recipes = () => {
     fetchRecipes();
   }, []);
 
-  const toggleFavourite = (id: string) => {
-    setFavourites((prevFavourites) => ({
-      ...prevFavourites,
-      [id]: !prevFavourites[id],
-    }));
+  const toggleFavourite = async (id: string) => {
+    try {
+      setFavourites((prevFavourites) => ({
+        ...prevFavourites,
+        [id]: !prevFavourites[id],
+      }));
+
+      await axios.post(
+        `http://localhost:5000/api/recipes/${id}/toggleFavorite`
+      );
+    } catch (error) {
+      console.error(`Error toggling favorite for recipe ${id}:`, error);
+    }
   };
 
   return (

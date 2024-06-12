@@ -38,8 +38,19 @@ const Header = () => {
         >
           Suggest Recipe
         </p>
-        <Heart className="cursor-pointer" />
-        <ShoppingCart width={32} className="cursor-pointer" />
+        <Heart
+          className="cursor-pointer"
+          onClick={() => {
+            navigate("/favourites");
+          }}
+        />
+        <ShoppingCart
+          width={32}
+          className="cursor-pointer"
+          onClick={() => {
+            navigate("/cart");
+          }}
+        />
         <div className="bg-white rounded-full w-10 h-10 cursor-pointer">
           <img
             className="rounded-full w-full h-full object-cover font-semibold"

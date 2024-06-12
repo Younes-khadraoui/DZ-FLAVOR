@@ -11,6 +11,8 @@ import Home from "./components/home/Home";
 import HeaderSearch from "./components/header/HeaderSearch";
 import RecipeDetails from "./components/recipes/RecipeDetails";
 import Footer from "./components/footer/Footer";
+import Favourites from "./components/favourites/Favourites";
+import Cart from "./components/cart/Cart";
 
 function App() {
   return (
@@ -67,20 +69,20 @@ function App() {
                 element={
                   <div className="min-h-screen flex flex-col ">
                     <Header />
-                    <Account />
+                    <Favourites />
                   </div>
                 }
               />
             }
           />
           <Route
-            path="/purchases"
+            path="/cart"
             element={
               <ProtectedRoute
                 element={
                   <div className="min-h-screen flex flex-col ">
                     <Header />
-                    <Account />
+                    <Cart />
                   </div>
                 }
               />

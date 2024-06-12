@@ -1,5 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 
+
 export interface IRecipe extends Document {
   image: string;
   name: string;

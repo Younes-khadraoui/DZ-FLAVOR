@@ -1,5 +1,7 @@
 import express, { Request, Response } from "express";
 import { Recipe } from "../models/recipeModel";
+import { User } from "../models/userModel";
+import mongoose from "mongoose";
 
 const router = express.Router();
 
@@ -89,6 +91,38 @@ router.post("/suggestions", async (req: Request, res: Response) => {
     res.status(201).json(newRecipe);
   } catch (error: any) {
     res.status(400).json({ error: error.message });
+  }
+});
+
+router.post("/:id/toggleFavorite", async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const userId = req.user?.id;
+
+  try {
+    const recipe = await Recipe.findById(id);
+    const user = await User.findById(userId);
+
+    if (!recipe || !user) {
+      return res.status(404).json({ error: "Recipe or user not found" });
+    }
+
+    const recipeId = new mongoose.Types.ObjectId(recipe._id?.toString());
+
+    const index = user.likedRecipes.findIndex((likedRecipeId) =>
+      likedRecipeId.equals(recipeId)
+    );
+
+    if (index === -1) {
+      user.likedRecipes.push(recipeId);
+    } else {
+      user.likedRecipes.splice(index, 1);
+    }
+
+    await user.save();
+
+    res.status(200).json({ message: "Toggle favorite success" });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
   }
 });
 
