@@ -17,8 +17,6 @@ sessions
 # Dependency directories
 node_modules/
 
-# Build directory
-dist/
 
 # Dependency files
 package-lock.json
