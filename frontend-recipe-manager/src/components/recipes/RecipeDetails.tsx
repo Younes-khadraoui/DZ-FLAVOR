@@ -36,7 +36,7 @@ const RecipeDetails = () => {
   }
 
   return (
-    <div className="bg-light min-h-screen flex justify-center items-center">
+    <div className="bg-light flex-1 flex justify-center items-center">
       <div className="bg-white rounded shadow-lg p-4">
         <img
           src={recipe.image}

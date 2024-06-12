@@ -32,19 +32,19 @@ function App() {
           <Route
             path="/recipes"
             element={
-              <>
+              <div className="min-h-screen flex flex-col ">
                 <HeaderSearch />
                 <Recipes />
-              </>
+              </div>
             }
           />
           <Route
             path="/suggestions"
             element={
-              <>
+              <div className="min-h-screen flex flex-col ">
                 <Header />
                 <Suggestions />
-              </>
+              </div>
             }
           />
           <Route
@@ -52,7 +52,7 @@ function App() {
             element={
               <ProtectedRoute
                 element={
-                  <div>
+                  <div className="min-h-screen flex flex-col ">
                     <Header />
                     <Account />
                   </div>
@@ -65,7 +65,7 @@ function App() {
             element={
               <ProtectedRoute
                 element={
-                  <div>
+                  <div className="min-h-screen flex flex-col ">
                     <Header />
                     <Account />
                   </div>
@@ -78,7 +78,7 @@ function App() {
             element={
               <ProtectedRoute
                 element={
-                  <div>
+                  <div className="min-h-screen flex flex-col ">
                     <Header />
                     <Account />
                   </div>
@@ -92,10 +92,10 @@ function App() {
               <ProtectedRoute
                 adminOnly
                 element={
-                  <>
+                  <div className="min-h-screen flex flex-col ">
                     <HeaderSearch />
                     <Dashboard />
-                  </>
+                  </div>
                 }
               />
             }
@@ -103,7 +103,7 @@ function App() {
           <Route
             path="/recipe/:id"
             element={
-              <div>
+              <div className="min-h-screen flex flex-col ">
                 <Header />
                 <RecipeDetails />
               </div>

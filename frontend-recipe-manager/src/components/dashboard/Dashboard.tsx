@@ -57,7 +57,7 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#f4f2f0]  p-20 min-h-screen">
+    <div className="bg-[#f4f2f0]  p-20 flex-1">
       <h1 className="text-2xl font-bold mt-8 mb-4">Dashboard</h1>
 
       <div className="mb-8">

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+/*eslint-env node*/
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -9,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        algeria: "url('/algeria.jpg')",
+      },
       backgroundColor: {
         light: "#f4f2f0",
       },

@@ -44,7 +44,7 @@ const Suggestions = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-light">
+    <div className="flex justify-center items-center flex-1 bg-light">
       <div className="shadow-xl p-10 bg-white rounded-xl flex flex-col justify-between">
         <h1 className="pb-10 text-2xl font-semibold">
           Suggest an algerien Recipe

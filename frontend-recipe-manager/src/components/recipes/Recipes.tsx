@@ -32,8 +32,8 @@ const Recipes = () => {
   };
 
   return (
-    <div className="bg-light min-h-screen p-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-[1000px] ">
+    <div className="bg-light flex-1 p-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-10  ">
         {recipes.map((recipe) => (
           <div
             key={recipe._id}

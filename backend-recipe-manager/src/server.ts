@@ -5,7 +5,6 @@ import { authRoutes } from "./routes/authRoutes";
 import { recipeRoutes } from "./routes/recipeRoutes";
 import { categoryRoutes } from "./routes/categoryRoutes";
 import { suggestionsRoutes } from "./routes/suggestionsRoutes";
-import { User } from "./models/userModel";
 
 const cors = require("cors");
 
@@ -21,24 +20,16 @@ app.use("/api/recipes", recipeRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/suggestions", suggestionsRoutes);
 
-mongoose
-  .connect(process.env.MONGODB_URI as string)
-  .then(() => {
-    console.log("MongoDB connected");
+mongoose.set("debug", true);
+const { MONGODB_URI } = process.env;
 
-    const db = mongoose.connection;
-    console.log(`MongoDB connected to: ${db.host}:${db.port}`);
+mongoose.connect(MONGODB_URI as string);
 
-    User.findOne({})
-      .then(() => {
-        console.log("Database read/write test passed");
-      })
-      .catch((err) => {
-        console.error("Database read/write test failed", err);
-      });
-  })
-  .catch((err) => {
-    console.error("MongoDB connection error:", err);
-  });
+const db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+db.once("open", () => {
+  console.log("Connected to MongoDB!");
+});
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

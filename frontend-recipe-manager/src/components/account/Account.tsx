@@ -5,6 +5,7 @@ import { useUser } from "../UserProvider";
 
 const Account = () => {
   const { user, setUser } = useUser();
+  console.log(user);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -14,7 +15,7 @@ const Account = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#f4f2f0]">
+    <div className="flex-1 flex items-center justify-center bg-[#f4f2f0]">
       <div className="max-w-md w-full bg-white p-8 rounded shadow-lg">
         <h1 className="text-2xl font-bold mb-4">Account</h1>
         <p className="mb-4">
