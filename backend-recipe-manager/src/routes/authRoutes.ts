@@ -6,36 +6,8 @@ import { authenticateToken } from "../middlewares/authenticateToken";
 import dotenv from "dotenv";
 
 dotenv.config();
-const { ADMIN_EMAIL, ADMIN_PASSWORD } = process.env;
 
 export const authRoutes = express.Router();
-
-const createDefaultAdminUser = async () => {
-  const adminEmail = ADMIN_EMAIL as string;
-  const adminPassword = ADMIN_PASSWORD as string;
-
-  try {
-    let adminUser = await User.findOne({ email: adminEmail });
-
-    if (!adminUser) {
-      adminUser = new User({
-        email: adminEmail,
-        password: adminPassword,
-        admin: true,
-      });
-
-      const salt = await bcrypt.genSalt(12);
-      adminUser.password = await bcrypt.hash(adminPassword, salt);
-
-      await adminUser.save();
-      console.log("Default admin user created successfully");
-    }
-  } catch (err) {
-    console.error("Error creating default admin user:", err);
-  }
-};
-
-createDefaultAdminUser();
 
 authRoutes.post("/register", async (req: Request, res: Response) => {
   const { email, password } = req.body;
