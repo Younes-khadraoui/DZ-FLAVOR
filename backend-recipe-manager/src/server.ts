@@ -14,8 +14,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 const corsOptions = {
-  origin: "https://dzflavor.vercel.app", 
-  methods: ["GET", "POST", "PUT", "DELETE"], 
+  origin: "https://dzflavor.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 
@@ -36,6 +36,10 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 db.once("open", () => {
   console.log("Connected to MongoDB!");
+});
+
+app.use("/", (req, res) => {
+  res.send("Welcome to DZFlavor API!");
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
