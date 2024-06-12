@@ -20,30 +20,7 @@ const userModel_1 = require("../models/userModel");
 const authenticateToken_1 = require("../middlewares/authenticateToken");
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-const { ADMIN_EMAIL, ADMIN_PASSWORD } = process.env;
 exports.authRoutes = express_1.default.Router();
-const createDefaultAdminUser = () => __awaiter(void 0, void 0, void 0, function* () {
-    const adminEmail = ADMIN_EMAIL;
-    const adminPassword = ADMIN_PASSWORD;
-    try {
-        let adminUser = yield userModel_1.User.findOne({ email: adminEmail });
-        if (!adminUser) {
-            adminUser = new userModel_1.User({
-                email: adminEmail,
-                password: adminPassword,
-                admin: true,
-            });
-            const salt = yield bcryptjs_1.default.genSalt(12);
-            adminUser.password = yield bcryptjs_1.default.hash(adminPassword, salt);
-            yield adminUser.save();
-            console.log("Default admin user created successfully");
-        }
-    }
-    catch (err) {
-        console.error("Error creating default admin user:", err);
-    }
-});
-createDefaultAdminUser();
 exports.authRoutes.post("/register", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { email, password } = req.body;
     try {
