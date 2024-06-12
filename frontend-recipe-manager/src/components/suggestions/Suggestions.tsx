@@ -37,7 +37,7 @@ const Suggestions = () => {
         name: values.recipeName,
         image: values.recipeImage,
       };
-      await axios.post("http://localhost:5000/api/suggestions", newRecipe);
+      await axios.post("https://recipe-manager-api.vercel.app/api/suggestions", newRecipe);
     } catch (err) {
       console.log("Error creating suggestion");
     }

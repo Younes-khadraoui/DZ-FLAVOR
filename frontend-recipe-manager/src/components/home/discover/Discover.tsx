@@ -10,7 +10,7 @@ const Discover = () => {
   const fetchRecipes = async () => {
     try {
       const response = await axios.get<Recipe[]>(
-        "http://localhost:5000/api/recipes"
+        "https://recipe-manager-api.vercel.app/api/recipes"
       );
       setRecipes(response.data);
     } catch (error) {

@@ -34,7 +34,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({
         const token = localStorage.getItem("authToken");
         if (token) {
           const response = await axios.get<User>(
-            "http://localhost:5000/api/auth/account",
+            "https://recipe-manager-api.vercel.app/api/auth/account",
             {
               headers: {
                 Authorization: `Bearer ${token}`,

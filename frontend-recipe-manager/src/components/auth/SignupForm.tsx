@@ -21,7 +21,7 @@ export function SignupForm({ className, ...props }: UserAuthFormProps) {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://recipe-manager-api.vercel.app/api/auth/register",
         {
           email,
           password,

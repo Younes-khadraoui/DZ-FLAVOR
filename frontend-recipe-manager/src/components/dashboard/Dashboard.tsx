@@ -24,7 +24,7 @@ const Dashboard: React.FC = () => {
   const fetchRecipes = async () => {
     try {
       const response = await axios.get<Recipe[]>(
-        "http://localhost:5000/api/recipes"
+        "https://recipe-manager-api.vercel.app/api/recipes"
       );
       setRecipes(response.data);
     } catch (error) {
@@ -34,7 +34,9 @@ const Dashboard: React.FC = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/api/recipes/${id}`);
+      await axios.delete(
+        `https://recipe-manager-api.vercel.app/api/recipes/${id}`
+      );
       fetchRecipes();
     } catch (error) {
       console.error("Error deleting recipe:", error);
@@ -47,7 +49,10 @@ const Dashboard: React.FC = () => {
         name: newRecipeName,
         image: newRecipeImage,
       };
-      await axios.post("http://localhost:5000/api/recipes", newRecipe);
+      await axios.post(
+        "https://recipe-manager-api.vercel.app/api/recipes",
+        newRecipe
+      );
       fetchRecipes();
       setNewRecipeName("");
       setNewRecipeImage("");

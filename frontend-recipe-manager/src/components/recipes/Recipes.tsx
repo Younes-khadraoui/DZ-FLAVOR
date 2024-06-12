@@ -12,7 +12,7 @@ const Recipes = () => {
   const fetchRecipes = async () => {
     try {
       const response = await axios.get<Recipe[]>(
-        "http://localhost:5000/api/recipes"
+        "https://recipe-manager-api.vercel.app/api/recipes"
       );
       setRecipes(response.data);
     } catch (error) {
@@ -32,7 +32,7 @@ const Recipes = () => {
       }));
 
       await axios.post(
-        `http://localhost:5000/api/recipes/${id}/toggleFavorite`
+        `https://recipe-manager-api.vercel.app/api/recipes/${id}/toggleFavorite`
       );
     } catch (error) {
       console.error(`Error toggling favorite for recipe ${id}:`, error);
