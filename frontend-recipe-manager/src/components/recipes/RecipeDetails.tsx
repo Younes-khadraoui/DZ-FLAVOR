@@ -12,6 +12,8 @@ interface Recipe {
   categories: string[];
 }
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 const RecipeDetails = () => {
   const { id } = useParams<{ id: string }>();
   const [recipe, setRecipe] = useState<Recipe | null>(null);
@@ -20,7 +22,7 @@ const RecipeDetails = () => {
     const fetchRecipe = async () => {
       try {
         const response = await axios.get<Recipe>(
-          `http://localhost:5000/api/recipes/${id}`
+          `${BACKEND_URL}/api/recipes/${id}`
         );
         setRecipe(response.data);
       } catch (error) {

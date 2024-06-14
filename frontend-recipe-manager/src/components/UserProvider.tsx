@@ -12,6 +12,8 @@ interface UserContextType {
   setUser: React.Dispatch<React.SetStateAction<User>>;
 }
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 const initialUser: User = {
   email: "",
   profilePic: "",
@@ -34,7 +36,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({
         const token = localStorage.getItem("authToken");
         if (token) {
           const response = await axios.get<User>(
-            "https://recipe-manager-api.vercel.app/api/auth/account",
+            `${BACKEND_URL}/api/auth/account`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,

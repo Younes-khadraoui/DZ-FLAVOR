@@ -13,6 +13,8 @@ import {
 import { Input } from "@/components/ui/input";
 import axios from "axios";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 const formSchema = z.object({
   recipeName: z.string().min(2, {
     message: "Recipe name must be at least 2 characters",
@@ -37,7 +39,7 @@ const Suggestions = () => {
         name: values.recipeName,
         image: values.recipeImage,
       };
-      await axios.post("https://recipe-manager-api.vercel.app/api/suggestions", newRecipe);
+      await axios.post(`${BACKEND_URL}/api/suggestions`, newRecipe);
     } catch (err) {
       console.log("Error creating suggestion");
     }

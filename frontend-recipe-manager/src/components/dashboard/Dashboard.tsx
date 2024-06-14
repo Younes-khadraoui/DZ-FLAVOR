@@ -11,6 +11,7 @@ interface Recipe {
   tags: string[];
   categories: string[];
 }
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Dashboard: React.FC = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -23,9 +24,7 @@ const Dashboard: React.FC = () => {
 
   const fetchRecipes = async () => {
     try {
-      const response = await axios.get<Recipe[]>(
-        "https://recipe-manager-api.vercel.app/api/recipes"
-      );
+      const response = await axios.get<Recipe[]>(`${BACKEND_URL}/api/recipes`);
       setRecipes(response.data);
     } catch (error) {
       console.error("Error fetching recipes:", error);
@@ -34,9 +33,7 @@ const Dashboard: React.FC = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(
-        `https://recipe-manager-api.vercel.app/api/recipes/${id}`
-      );
+      await axios.delete(`${BACKEND_URL}/api/recipes/${id}`);
       fetchRecipes();
     } catch (error) {
       console.error("Error deleting recipe:", error);
@@ -49,10 +46,7 @@ const Dashboard: React.FC = () => {
         name: newRecipeName,
         image: newRecipeImage,
       };
-      await axios.post(
-        "https://recipe-manager-api.vercel.app/api/recipes",
-        newRecipe
-      );
+      await axios.post(`${BACKEND_URL}/api/recipes`, newRecipe);
       fetchRecipes();
       setNewRecipeName("");
       setNewRecipeImage("");

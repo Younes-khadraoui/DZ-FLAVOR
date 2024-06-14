@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { Recipe } from "@/types/recipe";
 import axios from "axios";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 const Recipes = () => {
   const navigate = useNavigate();
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -11,9 +13,7 @@ const Recipes = () => {
 
   const fetchRecipes = async () => {
     try {
-      const response = await axios.get<Recipe[]>(
-        "https://recipe-manager-api.vercel.app/api/recipes"
-      );
+      const response = await axios.get<Recipe[]>(`${BACKEND_URL}/api/recipes`);
       setRecipes(response.data);
     } catch (error) {
       console.error("Error fetching recipes:", error);
@@ -31,9 +31,7 @@ const Recipes = () => {
         [id]: !prevFavourites[id],
       }));
 
-      await axios.post(
-        `https://recipe-manager-api.vercel.app/api/recipes/${id}/toggleFavorite`
-      );
+      await axios.post(`${BACKEND_URL}/api/recipes/${id}/toggleFavorite`);
     } catch (error) {
       console.error(`Error toggling favorite for recipe ${id}:`, error);
     }

@@ -3,6 +3,8 @@ import { Recipe } from "@/types/recipe";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 const Discover = () => {
   const navigate = useNavigate();
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -10,7 +12,7 @@ const Discover = () => {
   const fetchRecipes = async () => {
     try {
       const response = await axios.get<Recipe[]>(
-        "https://recipe-manager-api.vercel.app/api/recipes"
+        `${BACKEND_URL}/api/recipes`
       );
       setRecipes(response.data);
     } catch (error) {

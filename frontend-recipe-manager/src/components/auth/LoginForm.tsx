@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 export function LoginForm({ className, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -24,7 +25,7 @@ export function LoginForm({ className, ...props }: UserAuthFormProps) {
 
     try {
       const response = await axios.post(
-        "https://recipe-manager-api.vercel.app/api/auth/login",
+        `${BACKEND_URL}/api/auth/login`,
         {
           email,
           password,
