@@ -37,6 +37,7 @@
   - TypeScript
 
 ## 4. Screenshots
+![image](https://github.com/Younes-khadraoui/DZ-FLAVOR/assets/107479886/23c921b9-88f7-4885-aa49-38aa7304bd50)
 ![image](https://github.com/Younes-khadraoui/DZ-FLAVOR/assets/107479886/98c778c9-09ec-4f7c-9b54-139e32cad1e8)
 ![image](https://github.com/Younes-khadraoui/DZ-FLAVOR/assets/107479886/3fb6aeee-5064-40f6-9911-96cee04e8730)
 
