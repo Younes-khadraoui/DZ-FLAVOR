@@ -11,9 +11,7 @@ const Discover = () => {
 
   const fetchRecipes = async () => {
     try {
-      const response = await axios.get<Recipe[]>(
-        `${BACKEND_URL}/api/recipes`
-      );
+      const response = await axios.get<Recipe[]>(`${BACKEND_URL}/api/recipes`);
       setRecipes(response.data);
     } catch (error) {
       console.error("Error fetching recipes:", error);
@@ -24,9 +22,9 @@ const Discover = () => {
     fetchRecipes();
   }, []);
   return (
-    <div className="p-10">
+    <div className="p-10 min-h-screen flex flex-col justify-center  itesm-center">
       <div className="flex gap-10 justify-center items-center p-4">
-        <h2 className="text-3xl font-semibold">Discover algerien cuisine</h2>
+        <h2 className="text-3xl font-semibold">Discover The Best recipes</h2>
         <a className="text-green-600 text-lg font-semibold" href="/recipes">
           View all &gt;
         </a>
@@ -34,7 +32,7 @@ const Discover = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4  ">
         {recipes.map(
           (recipe, idx) =>
-            idx < 4 && (
+            idx < 8 && (
               <div
                 key={recipe._id}
                 className="bg-white rounded shadow-lg p-4 flex flex-col cursor-pointer"
