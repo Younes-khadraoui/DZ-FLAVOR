@@ -1,4 +1,4 @@
-import veggies from "@/assets/veggies.png";
+import veggies from "@/assets/veggies.webp";
 
 const Suggest = () => {
   return (

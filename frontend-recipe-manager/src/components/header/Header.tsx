@@ -1,5 +1,5 @@
 import { Heart, ShoppingCart } from "lucide-react";
-import user from "../../assets/user.png";
+import user from "../../assets/user.webp";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {

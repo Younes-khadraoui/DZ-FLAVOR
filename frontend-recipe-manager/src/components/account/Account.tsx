@@ -1,4 +1,4 @@
-import users from "../../assets/user.png";
+import users from "../../assets/user.webp";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../UserProvider";

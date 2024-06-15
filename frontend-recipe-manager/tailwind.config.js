@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        algeria: "url('/algeria.jpg')",
+        algeria: "url('/algeria.webp')",
       },
       backgroundColor: {
         light: "#f4f2f0",

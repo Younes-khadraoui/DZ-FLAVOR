@@ -1,9 +1,9 @@
-import couscous from "@/assets/couscous.png";
-import image1 from "@/assets/hero/image1.png";
-import image2 from "@/assets/hero/image2.png";
-import image3 from "@/assets/hero/image3.png";
-import image4 from "@/assets/hero/image4.png";
-import image5 from "@/assets/hero/image5.png";
+import couscous from "@/assets/couscous.webp";
+import image1 from "@/assets/hero/image1.webp";
+import image2 from "@/assets/hero/image2.webp";
+import image3 from "@/assets/hero/image3.webp";
+import image4 from "@/assets/hero/image4.webp";
+import image5 from "@/assets/hero/image5.webp";
 import { InfiniteMovingCards } from "./ImageSlider";
 
 const Hero = () => {
