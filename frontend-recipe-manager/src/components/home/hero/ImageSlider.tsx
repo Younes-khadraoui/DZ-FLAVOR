@@ -93,7 +93,7 @@ export const InfiniteMovingCards = ({
             <img
               src={image}
               alt={`Image ${index}`}
-              className="w-full h-auto rounded-2xl shadow-lg"
+              className="w-full h-[11rem] md:h-[13rem] rounded-2xl shadow-lg"
             />
           </li>
         ))}

@@ -11,16 +11,16 @@ const Hero = () => {
   return (
     <div className="hero min-h-screen bg-[#f4f2f0]">
       <img
-        className="absolute -left-96"
+        className="absolute -left-96 hidden md:block"
         style={{ width: "800px", height: "auto" }}
         src={couscous}
         alt="Couscous"
       />
-      <div className="pt-40 pl-96">
+      <div className="md:pt-40 pt-20 p-10 md:pl-96">
         <h1 className="font-bold text-4xl lg:text-5xl">
           Welcome to Algerian Gourmet
         </h1>
-        <p className="text-gray-500 pt-2 text-lg">
+        <p className="text-gray-500 pt-2 text-sm md:text-lg ">
           Discover the Rich Flavors of Algeria <br /> with Our Authentic Recipes
         </p>
       </div>

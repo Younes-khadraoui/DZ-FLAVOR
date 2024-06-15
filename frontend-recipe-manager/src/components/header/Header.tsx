@@ -23,7 +23,7 @@ const Header = () => {
       </div>
       <div className="flex gap-4 justify-center items-center z-10">
         <p
-          className="font-semibold cursor-pointer pr-4"
+          className="font-semibold cursor-pointer pr-4 hidden md:block"
           onClick={() => {
             navigate("/recipes");
           }}
@@ -31,7 +31,7 @@ const Header = () => {
           Explore Recipes
         </p>
         <p
-          className="font-semibold cursor-pointer pr-4"
+          className="font-semibold cursor-pointer pr-4 hidden md:block"
           onClick={() => {
             navigate("/suggestions");
           }}

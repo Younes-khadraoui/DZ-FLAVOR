@@ -2,8 +2,8 @@ import { Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <div className="bg-light bg-top bg-cover flex mt-20 justify-between p-20 lg:px-20">
-      <div className="flex gap-24">
+    <div className="bg-light bg-top bg-cover flex flex-col md:flex-row justify-between p-20 lg:px-20 absolute mt-48 w-screen">
+      <div className="grid gap-24 grid-cols-2 pb-10 md:grid-cols-3">
         <div>
           <p className="pb-6 font-semibold text-gray-500">Recipes</p>
           <p>Best</p>
