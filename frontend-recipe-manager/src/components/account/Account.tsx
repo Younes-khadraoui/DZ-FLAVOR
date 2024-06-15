@@ -16,7 +16,7 @@ const Account = () => {
 
   return (
     <div className="flex-1 flex items-center justify-center bg-[#f4f2f0]">
-      <div className="max-w-md w-full bg-white p-8 rounded shadow-lg">
+      <div className="w-full bg-white p-8 rounded shadow-lg ">
         <h1 className="text-2xl font-bold mb-4">Account</h1>
         <p className="mb-4">
           <span className="font-bold">Email:</span> {user.email}
