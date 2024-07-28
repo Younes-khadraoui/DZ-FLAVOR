@@ -9,7 +9,7 @@ import { InfiniteMovingCards } from "./ImageSlider";
 const Hero = () => {
   const images = [image1, image2, image3, image4, image5];
   return (
-    <div className="hero min-h-screen bg-[#f4f2f0]">
+    <div className="hero min-h-screen bg-[#f4f2f0] pt-20">
       <img
         className="absolute -left-96 hidden md:block"
         style={{ width: "800px", height: "auto" }}

@@ -6,7 +6,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-between p-6 items-center px-10 bg-light">
+    <div className="absolute top-0 right-0 left-0 flex justify-between p-6 items-center px-10">
       <svg
         className="absolute top-0 lg:-top-36 left-0 "
         xmlns="http://www.w3.org/2000/svg"
