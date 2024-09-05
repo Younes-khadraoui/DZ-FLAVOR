@@ -7,6 +7,7 @@ import { categoryRoutes } from "./routes/categoryRoutes";
 import { suggestionsRoutes } from "./routes/suggestionsRoutes";
 
 const cors = require("cors");
+const morgan = require('morgan');
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/recipes", recipeRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/suggestions", suggestionsRoutes);
+app.use(morgan('combined'));
 
 mongoose.set("debug", true);
 const { MONGODB_URI } = process.env;

@@ -9,24 +9,23 @@ import { InfiniteMovingCards } from "./ImageSlider";
 const Hero = () => {
   const images = [image1, image2, image3, image4, image5];
   return (
-    <div className="hero min-h-screen bg-[#f4f2f0] pt-20">
-      <img
-        className="absolute -left-96 hidden md:block"
-        style={{ width: "800px", height: "auto" }}
-        src={couscous}
-        alt="Couscous"
-      />
-      <div className="md:pt-40 pt-20 p-10 md:pl-96">
-        <h1 className="font-bold text-4xl lg:text-5xl">
-          Welcome to Algerian Gourmet
-        </h1>
-        <p className="text-gray-500 pt-2 text-sm md:text-lg ">
-          Discover the Rich Flavors of Algeria <br /> with Our Authentic Recipes
-        </p>
+    <div className="flex flex-col justify-between bg-[#f4f2f0] z-20">
+      <div className="flex flex-wrap justify-center gap-10 items-center ">
+        <img
+          style={{ width: "600px", height: "auto" }}
+          src={couscous}
+          alt="Couscous"
+        />
+        <div className="flex flex-col items-center justify-center  text-center lg:text-start">
+          <h1 className="font-bold text-4xl lg:text-5xl">
+            Welcome to Algerian Gourmet
+          </h1>
+          <p className="text-gray-500 pt-2 text-sm md:text-lg  w-full">
+            Discover the Rich Flavors of Algeria <br /> with Our Authentic Recipes
+          </p>
+        </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0">
-        <InfiniteMovingCards images={images} />
-      </div>
+      <InfiniteMovingCards images={images}/>
     </div>
   );
 };

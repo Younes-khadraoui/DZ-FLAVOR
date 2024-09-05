@@ -10,7 +10,6 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Home from "./components/home/Home";
 import HeaderSearch from "./components/header/HeaderSearch";
 import RecipeDetails from "./components/recipes/RecipeDetails";
-import Footer from "./components/footer/Footer";
 import Favourites from "./components/favourites/Favourites";
 import Cart from "./components/cart/Cart";
 
@@ -25,7 +24,6 @@ function App() {
               <>
                 <Header />
                 <Home />
-                <Footer />
               </>
             }
           />
